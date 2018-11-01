@@ -6,6 +6,7 @@ import { PhotoDetails } from './photoDetails'
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    marginVertical: 5,
     marginHorizontal: 10,
     flexDirection: 'row',
     position: 'relative',
@@ -18,17 +19,19 @@ const styles = StyleSheet.create({
 })
 const { container, row } = styles
 
-export const Items = ({ item, onPress, details }) => {
+export const Items = ({ item, onPress_avatar, details, eventPhoto }) => {
   const { urls, user } = item
   const { profile_image, first_name, last_name } = user
 
   return (
     <View style={container}>
-      <TouchableOpacity style={row} onPress={onPress}>
+      <TouchableOpacity style={row} onPress={eventPhoto}>
         <ImgBlock urlImg={{ uri: urls.small }} />
         <PhotoDetails details={details} fullName={`${first_name} ${last_name}`} />
       </TouchableOpacity>
-      <ImgBlock avatar urlImg={{ uri: profile_image.medium }} />
+      <TouchableOpacity onPress={onPress_avatar}>
+        <ImgBlock avatar urlImg={{ uri: profile_image.medium }} />
+      </TouchableOpacity>
     </View>
   )
 }
