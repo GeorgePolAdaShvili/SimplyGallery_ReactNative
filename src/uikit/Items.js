@@ -30,7 +30,7 @@ export const Items = ({ item, onPress_avatar, details, eventPhoto }) => {
         <PhotoDetails details={details} fullName={`${first_name} ${last_name}`} />
       </TouchableOpacity>
       <TouchableOpacity onPress={onPress_avatar}>
-        <ImgBlock avatar urlImg={{ uri: profile_image.medium }} />
+        <ImgBlock avatarMode urlImg={{ uri: profile_image.medium }} />
       </TouchableOpacity>
     </View>
   )

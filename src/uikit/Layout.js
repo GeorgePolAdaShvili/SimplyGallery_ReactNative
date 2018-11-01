@@ -1,36 +1,32 @@
 import React from 'react'
 import { View, StyleSheet, ScrollView, ImageBackground } from 'react-native'
+import { _w, _h } from '../../constants'
 
 const styles = StyleSheet.create({
   container: {
-    width: '100%',
-    position: 'relative'
-  },
-  child: {
+    width: _w,
+    height: _h,
     position: 'relative',
-    paddingHorizontal: 10,
     backgroundColor: 'rgba(29,26,26, .4)'
   },
-  full: {
-    width: '100%',
-    height: '100%'
+  child: {
+    marginBottom: 25,
+    paddingHorizontal: 10,
+    position: 'relative'
   },
-  bgColor: {
+  bgWidth: {
     width: 'auto'
   }
 })
 const srcBgColor = '../img/bg-main.jpg'
-const { container, child, full, bgColor } = styles
+const { container, child, bgWidth } = styles
 
 export const Layout = props => (
-  <View style={[container, full]}>
-    <View>
-      <ImageBackground style={bgColor} source={require(srcBgColor)}>
-        <ScrollView>
-          <View style={child}>{ props.children }</View>
-        </ScrollView>
-      </ImageBackground>
-    </View>
+  <View style={[container]}>
+    <ImageBackground style={bgWidth} source={require(srcBgColor)}>
+      <ScrollView>
+        <View style={child}>{ props.children }</View>
+      </ScrollView>
+    </ImageBackground>
   </View>
 )
-

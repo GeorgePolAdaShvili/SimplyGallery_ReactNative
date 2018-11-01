@@ -5,8 +5,8 @@ const styles = StyleSheet.create({
   photoDetails: {
     flex: 1,
     height: 100,
-    marginHorizontal: '3%',
     borderRadius: 10,
+    marginHorizontal: '3%',
     position: 'relative',
     backgroundColor: 'rgba(232,219,255,.3)'
   },
@@ -32,9 +32,7 @@ export const PhotoDetails = ({ fullName }) => (
   <View style={photoDetails}>
     <View style={nameBlock}>
       <Text style={someText}>Name:</Text>
-      <Text style={fullNameStyle} numberOfLines={2} ellipsizeMode={'tail'}>
-        { fullName }
-      </Text>
+      <Text style={fullNameStyle} numberOfLines={2} ellipsizeMode={'tail'}>{ fullName }</Text>
     </View>
   </View>
 )

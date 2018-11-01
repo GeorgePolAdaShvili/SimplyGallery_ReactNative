@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import { View } from 'react-native'
 import { Header, ItemsList, Layout } from '../../uikit'
-import { _Urls } from '../../../constants'
+import { _Urls, _Routers } from '../../../constants'
 
 export default class extends Component {
   state = {
     data: []
   }
+
   async componentDidMount() {
     try {
       const api_call = await fetch(_Urls.getItemList)
@@ -17,16 +17,16 @@ export default class extends Component {
     }
   }
 
+  goToDetailsPhoto = params => this.props.navigation.navigate(_Routers.first.DetailsPhoto, params)
+
   render() {
     const { data } = this.state
 
     return (
-      <View>
-        <Layout>
-          <Header title={'Simply gallery'} />
-          <ItemsList data={data} />
-        </Layout>
-      </View>
+      <Layout>
+        <Header title={'Simply gallery'} />
+        <ItemsList data={data} goToDetailsPhoto={this.goToDetailsPhoto} />
+      </Layout>
     )
   }
 }

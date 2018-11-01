@@ -1,25 +1,16 @@
 import React, { Component } from 'react'
-import { StyleSheet, View, Text } from 'react-native'
-import { Layout, Header } from '../../uikit'
-
-const styles = StyleSheet.create({
-  container: {
-    width: '100%',
-    position: 'relative'
-  }
-})
-const { container } = styles
+import { Layout, Header, ImgBlock } from '../../uikit'
 
 export default class extends Component {
   render() {
+    const { navigation } = this.props
+    const { urls } = navigation.state.params
+
     return (
-      <View style={container}>
-        <Layout>
-          <Header title='Details photo' />
-          <Text>DETAILS</Text>
-        </Layout>
-      </View>
+      <Layout>
+        <Header title='Details photo' />
+        <ImgBlock fullMode urlImg={{uri: urls.full}} />
+      </Layout>
     )
   }
 }
-
