@@ -1,0 +1,30 @@
+{
+  "name": "gallery",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "run-device": "react-native run-android",
+    "react-devtools": "react-devtools",
+    "dev": "concurrently \"yarn run start\" \"yarn run run-device\" \"yarn run react-devtools\"",
+    "test": "jest"
+  },
+  "dependencies": {
+    "concurrently": "^4.0.1",
+    "react": "16.6.0-alpha.8af6728",
+    "react-native": "0.57.4",
+    "react-navigation": "^2.18.2"
+  },
+  "devDependencies": {
+    "babel-jest": "23.6.0",
+    "eslint": "^5.8.0",
+    "eslint-config-equimper": "^2.2.2",
+    "jest": "23.6.0",
+    "metro-react-native-babel-preset": "0.48.3",
+    "react-devtools": "^3.4.2",
+    "react-test-renderer": "16.6.0-alpha.8af6728"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
