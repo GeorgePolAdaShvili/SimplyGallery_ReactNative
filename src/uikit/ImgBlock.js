@@ -15,8 +15,12 @@ const styles = StyleSheet.create({
     borderRadius: 10
   },
   full: {
-    width: _w - 100,
-    height: _h - 75
+    width: _w - 75,
+    height: _h - 120,
+    borderWidth: 5,
+    borderRadius: 25,
+    marginHorizontal: 25,
+    borderColor: 'white'
   }
 })
 const { photoIcon, avatarImg, full } = styles

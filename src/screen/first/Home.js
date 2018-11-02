@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { fetchDataItemList } from '../../actions/get_ItemList'
 import { Header, ItemsList, Layout } from '../../uikit'
 import { _Urls, _Routers } from '../../../constants'
 
-export default class extends Component {
+class Home extends Component {
   state = {
     data: []
   }
@@ -12,6 +14,7 @@ export default class extends Component {
       const api_call = await fetch(_Urls.getItemList)
       const data = await api_call.json()
       this.setState({ data })
+      this.props.setDataList()
     } catch (e) {
       throw e
     }
@@ -30,3 +33,16 @@ export default class extends Component {
     )
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    itemList: state.itemList
+  }
+}
+const mapDispatchToProps = dispatch => {
+  return {
+    setDataList: () => { dispatch(fetchDataItemList()) }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home)

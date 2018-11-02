@@ -4,8 +4,9 @@ import { _w, _h } from '../../constants'
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     width: _w,
-    height: _h,
+    maxHeight: _h,
     position: 'relative',
     backgroundColor: 'rgba(29,26,26, .4)'
   },
