@@ -1,6 +1,6 @@
 import 'react-devtools'
 import { AppRegistry } from 'react-native'
-import RootStar from './src/screen/first'
+import App from './App'
 import { name as appName } from './app.json'
 
-AppRegistry.registerComponent(appName, () => RootStar)
+AppRegistry.registerComponent(appName, () => App)
