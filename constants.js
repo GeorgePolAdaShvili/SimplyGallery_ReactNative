@@ -20,10 +20,13 @@ export const _Urls = {
 export const _Color = {
   accent: '#ffab00'
 }
-// Actions
+// Action Async Types
 export const _RequestAPI = {
   start: 'Request_Repository_Start',
   success: 'Request_Repository_Success',
   error: 'Request_Repository_Error'
 }
-
+// Action Types
+export const _Slider = {
+  start: 'Slider_start'
+}

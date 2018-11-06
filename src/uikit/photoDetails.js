@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
     flex: 1,
     height: 100,
     borderRadius: 10,
-    marginHorizontal: '3%',
+    marginHorizontal: 10,
     position: 'relative',
     backgroundColor: 'rgba(232,219,255,.3)'
   },
@@ -36,4 +36,3 @@ export const PhotoDetails = ({ fullName }) => (
     </View>
   </View>
 )
-

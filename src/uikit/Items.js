@@ -19,20 +19,19 @@ const styles = StyleSheet.create({
 })
 const { container, row } = styles
 
-export const Items = ({ item, onPress_avatar, details, eventPhoto }) => {
+export const Items = ({ item, eventImg }) => {
   const { urls, user } = item
   const { profile_image, first_name, last_name } = user
 
   return (
     <View style={container}>
-      <TouchableOpacity style={row} onPress={eventPhoto}>
+      <TouchableOpacity style={row} onPress={() => eventImg(item)}>
         <ImgBlock urlImg={{ uri: urls.small }} />
-        <PhotoDetails details={details} fullName={`${first_name} ${last_name}`} />
+        <PhotoDetails fullName={`${first_name} ${last_name}`} />
       </TouchableOpacity>
-      <TouchableOpacity onPress={onPress_avatar}>
+      <TouchableOpacity onPress={() => console.log('avatar_click')}>
         <ImgBlock avatarMode urlImg={{ uri: profile_image.medium }} />
       </TouchableOpacity>
     </View>
   )
 }
-
