@@ -13,6 +13,7 @@ class Home extends Component {
 
   render() {
     const { itemList } = this.props
+    //console.log(this.props)
 
     return (
       <Layout>

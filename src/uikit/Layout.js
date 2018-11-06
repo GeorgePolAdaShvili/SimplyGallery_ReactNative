@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: _w,
-    maxHeight: _h,
+    minHeight: _h,
     position: 'relative',
     backgroundColor: 'rgba(29,26,26, .4)'
   },
@@ -23,7 +23,7 @@ const srcBgColor = '../img/bg-main.jpg'
 const { container, child, bgWidth } = styles
 
 export const Layout = props => (
-  <View style={[container]}>
+  <View style={container}>
     <ImageBackground style={bgWidth} source={require(srcBgColor)}>
       <ScrollView>
         <View style={child}>{ props.children }</View>

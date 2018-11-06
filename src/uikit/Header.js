@@ -1,40 +1,42 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
-import Icon from 'react-native-vector-icons/FontAwesome'
-import { _Color } from '../../constants'
+import { Arrow } from './Arrow'
+import { _Color, _w } from '../../constants'
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    height: 75,
+    flex: 2,
+    minHeight: 75,
+    width: _w / 1.2,
+    marginHorizontal: 10,
     flexDirection: 'row',
     position: 'relative',
-    marginHorizontal: '10%',
-    justifyContent: 'space-between'
+    justifyContent: 'flex-end'
   },
   textStyle: {
     fontSize: 22,
-    marginTop: '10%',
+    marginTop: 10,
     fontWeight: '900',
     color: '#ffab00',
     fontFamily: 'Georgia'
+  },
+  arrowStyle: {
+    flex: 1,
+    marginTop: 5,
+    alignItems: 'flex-start'
   }
-  //right: {
-  //  marginLeft: '50%'
-  //}
 })
 const arrow = {
-  size: 40,
+  size: 30,
   color: _Color.accent,
   name: 'arrow-circle-left',
-  backgroundColor: 'transparent'
+  bgColor: 'transparent'
 }
-const { container, textStyle } = styles
-const arrowLeft = event => (<Icon.Button name={arrow.name} color={arrow.color} backgroundColor={arrow.backgroundColor} size={arrow.size} onPress={event} />)
+const { container, textStyle, arrowStyle } = styles
 
 export const Header = ({ backMode, title }) => (
   <View style={container}>
-    { backMode ? arrowLeft(backMode) : null }
+    <View style={arrowStyle}>{ backMode ? <Arrow params={arrow} event={backMode} /> : null }</View>
     <Text style={textStyle}>{ title }</Text>
   </View>
 )
