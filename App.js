@@ -14,3 +14,5 @@ export default () => {
     </Provider>
   )
 }
+
+store.subscribe(() => { console.log('---Subscribe--new Store-', store.getState()) })

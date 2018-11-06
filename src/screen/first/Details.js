@@ -1,18 +1,27 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import { Layout, Header, ImgBlock } from '../../uikit'
 
-export default class extends Component {
+class Details extends Component {
   goToHome = () => { this.props.navigation.goBack() }
 
   render() {
-    const { navigation } = this.props
-    const { urls } = navigation.state.params
+    const { viewImg } = this.props.view
+    const { urls } = viewImg
 
     return (
       <Layout>
         <Header backMode={this.goToHome} title='Details photo' />
-        <ImgBlock fullMode urlImg={{uri: urls.full}} />
+        { viewImg ? <ImgBlock fullMode urlImg={{uri: urls.full}} /> : null }
       </Layout>
     )
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    view: state.slider
+  }
+}
+
+export default connect(mapStateToProps)(Details)

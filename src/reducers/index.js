@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux'
-import { setItemListReducer } from './set_itemList_reducers'
+import { setItemListReducer } from './ItemListReducers'
+import { sliderReducer } from './sliderReducers'
 
 export default combineReducers({
-  setList: setItemListReducer
+  setList: setItemListReducer,
+  slider: sliderReducer
 })

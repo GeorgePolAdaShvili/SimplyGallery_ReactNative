@@ -4,12 +4,6 @@ import { Arrow } from './Arrow'
 import { _w, _h, _Color } from '../../constants'
 
 const styles = StyleSheet.create({
-  container: {
-    position: 'relative'
-  },
-  fullHeight: {
-    height: _h
-  },
   avatarImg: {
     width: 55,
     height: 55,
@@ -51,10 +45,10 @@ const rightArrow = {
   name: 'arrow-circle-right',
   bgColor: 'transparent'
 }
-const { photoIcon, avatarImg, full, arrowBox, container, fullHeight } = styles
+const { photoIcon, avatarImg, full, arrowBox } = styles
 
 export const ImgBlock = ({ avatarMode, fullMode, urlImg }) => (
-  <View style={fullMode ? [container, fullHeight] : container}>
+  <View>
     { fullMode ? <View style={arrowBox}>
       <Arrow params={leftArrow} />
       <Arrow params={rightArrow} />
